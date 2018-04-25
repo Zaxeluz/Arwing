@@ -83,7 +83,7 @@ void actualizar() {
 	posicionCamara = vec3(x, y, z);
 
 	vista = lookAt(posicionCamara,           //Posicion de la cámara 
-		vec3(0.0f, 0.0f, 0.0f),              //Posicion del objetivo
+		vec3(0.0f, 3.0f, 0.0f),              //Posicion del objetivo
 		vec3(0.0f, 1.0f, 0.0f));             //Vector hacia arriba (rotación cámara)
 
 	arwing->vista = vista;
@@ -107,90 +107,171 @@ void inicializarArwing() {
 	arwing = new Modelo();
 	srand(time(NULL));
 
+//De 1 a 16 cuerpo
 	// 1
 	arwing->vertices.push_back({ vec4(0.0f, 0.0f, 0.0f, 1.0f),vec4(0.80f, 0.92f, 0.92f, 1.0f) });
-	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.1f, 1.0f),vec4(0.80f, 0.92f, 0.92f, 1.0f) });
-	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.1f, 1.0f),vec4(0.80f, 0.92f, 0.92f, 1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.02f, 1.0f),vec4(0.80f, 0.92f, 0.92f, 1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.02f, 1.0f),vec4(0.80f, 0.92f, 0.92f, 1.0f) });
 
 	//2
 	arwing->vertices.push_back({ vec4(0.0f, 0.0f, 0.0f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.02f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//3
 	arwing->vertices.push_back({ vec4(0.0f, 0.0f, 0.0f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.02f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//4
-	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.02f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.02f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//5
-	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.02f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//6
-	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.0f, 0.02f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//7
-	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.0f, 0.02f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//8
 	arwing->vertices.push_back({ vec4(0.0f, 0.0f, 0.0f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.0f, 5.0f, -1.5f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 5.0f, -1.2f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//9
 	arwing->vertices.push_back({ vec4(0.0f, 0.0f, 0.0f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.0f, 5.0f, -1.5f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 5.0f, -1.2f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//10
-	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.11f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.06f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//11
-	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.11f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.06f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 	
 	//12
-	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.3f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.11f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.2f, 5.8f, 0.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.06f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//13
-	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.11f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.0f, 5.5f, -0.5f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.06f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 5.5f, -0.45f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//14
-	arwing->vertices.push_back({ vec4(0.0f, 5.5f, -0.5f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.11f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 5.5f, -0.45f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 7.0f, 0.06f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//15
-	arwing->vertices.push_back({ vec4(0.0f, 5.5f, -0.5f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 5.5f, -0.45f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
 	//16
-	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(0.0f, 5.0f, -1.5f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.0f, 5.0f, -1.2f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
 
+//De 17 a 20 ala derecha
 	//17
-	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(1.0f, 3.4f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
-	arwing->vertices.push_back({ vec4(1.6f, 8.8f, -1.1f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.0f, 3.4f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.6f, 9.3f, 0.85f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//18
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.4f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.6f, 9.3f, 0.85f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//19
+	arwing->vertices.push_back({ vec4(1.4f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.6f, 9.3f, 0.85f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.0f, 3.4f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//20
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.4f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.0f, 3.4f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+//De 21 a 24 ala izquierda
+	//21 arriba
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.0f, 3.4f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.6f, 9.3f, 0.85f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//22 atras
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.4f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.6f, 9.3f, 0.85f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//23 lado
+	arwing->vertices.push_back({ vec4(-1.4f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.6f, 9.3f, 0.85f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.0f, 3.4f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//24 abajo
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.4f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.0f, 3.4f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+//De 25 a 28 vista ala izquierda
+	//25 frente
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.7f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.15f, 5.6f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//26 arriba
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.7f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-2.3f, 11.0f, -3.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//27 abajo izquierda
+	arwing->vertices.push_back({ vec4(-2.3f, 11.0f, -3.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.7f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.15f, 5.6f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//28 abajo derecha
+	arwing->vertices.push_back({ vec4(-2.3f, 11.0f, -3.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(-1.15f, 5.6f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+//De 29 a 32 vista ala derecha
+	//29 frente
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.7f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.15f, 5.6f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//30 arriba
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.7f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(2.3f, 11.0f, -3.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//31 abajo izquierda
+	arwing->vertices.push_back({ vec4(2.3f, 11.0f, -3.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.7f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.15f, 5.6f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
+	//32 abajo derecha
+	arwing->vertices.push_back({ vec4(2.3f, 11.0f, -3.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(0.8f, 6.0f, -1.05f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+	arwing->vertices.push_back({ vec4(1.15f, 5.6f, -1.25f, 1.0f),vec4((float(rand() % 101)) / 100,(float(rand() % 101)) / 100,(float(rand() % 101)) / 100,1.0f) });
+
 
 	arwing->vista = vista;
 	arwing->proyeccion = proyeccion;
@@ -199,7 +280,7 @@ void inicializarArwing() {
 
 void inicializarVista() {
 	vista = lookAt(posicionCamara,           //Posicion de la cámara 
-		vec3(0.0f, 0.0f, 0.0f),              //Posicion del objetivo
+		vec3(0.0f, 3.0f, 0.0f),              //Posicion del objetivo
 		vec3(0.0f, 1.0f, 0.0f));             //Vector hacia arriba (rotación cámara)
 }
 
